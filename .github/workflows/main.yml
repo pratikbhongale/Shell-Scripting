@@ -1,0 +1,14 @@
+name: CI/CD with shell script
+on:
+ push:
+   branches: [main]
+jobs:
+  run-shell:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Make Script executable
+        run: chmod +x basic/*.sh
+      - name: Execute Shell scripts
+        run: ./basic/*.sh
