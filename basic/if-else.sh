@@ -53,3 +53,18 @@ then
 else
 	echo "Outside Range"
 fi
+
+
+
+read -p "Enter the file name: " file
+if [ -f $file ]
+then
+	echo "File exists"
+	sleep 2
+	ls -l $file 
+else
+	echo "File is being created...."
+	touch $file
+	sleep 2
+	echo "File is created!!"
+fi
