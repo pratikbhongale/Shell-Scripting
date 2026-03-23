@@ -27,3 +27,10 @@ then
 else
 	echo "You are not root user"
 fi
+
+while pgrep jenkins > /dev/null
+do
+	echo "jenkins is running"
+	sleep 2
+done
+echo "nginx stopped"
