@@ -36,6 +36,7 @@ done
 echo "$file found!"
 
 comment
+<<comment
 i=2
 until [ $i -gt 10 ]
 do
@@ -50,3 +51,11 @@ do
 	read -p "Try again: " num
 done
 echo "Good!"
+comment
+
+i=1
+until [ $i -gt 0 ]
+do
+	echo "this will run at least once"
+	((i++))
+done
