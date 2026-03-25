@@ -15,8 +15,19 @@ do
 done
 comment
 servers=("app-1" "app-2" "db-1" "db-2")
+<<comment
 for server in "${servers[@]}"
 do
 	echo "Checking $server....."
 	sleep 2
 done	
+comment
+#to add element
+servers+=("API" "Cloud")
+echo ${servers[@]}
+for server in "${servers[@]}"
+do
+	echo "checking $server....."
+	sleep 2
+done
+
