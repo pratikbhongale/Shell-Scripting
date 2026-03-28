@@ -1,6 +1,10 @@
 #!/bin/bash
 <<continue is used to skip the current iteration and move to the next
 -z is used to check if the variable or input has any empty value
+Use Cases:
+skip unwanted data
+data validation - ignore empty input
+file filtering -  skip certain file
 continue
 
 for i in 1 2 3 4 5 6 7
@@ -38,3 +42,17 @@ do
 	echo "Listing the environment provided: ${name}"
 	sleep 2
 done
+
+#DevOps Level - skip healthy server
+
+servers=("server1" "server2" "server3")
+for server in ${servers[@]}
+do
+	ping -c 1 $server > /dev/null
+	if [ $? -eq 0 ]; then
+		echo "$server is healthy, skipping...."
+		continue
+	fi
+	echo "$server is down!"
+done
+
