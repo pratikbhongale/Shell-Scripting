@@ -26,4 +26,35 @@ greet () {
 }
 greet
 
+#function with parameters, $1, $2, $3 - take positional argument, $@ - all argument
+greet_user() {
+	echo "Hello, $1!"
+}
+greet_user "root"
 
+check_even() {
+	if (( $1 % 2 == 0 ))
+	then
+		return 0
+	fi
+		return 1
+}
+check_even 4
+
+if [ $? -eq 0 ]; then
+	echo "Even number"
+else
+	echo "Odd number"
+fi
+# $? stores commands exit status
+# we have used if-cond again because we have stored the status in $ it does not return anything so to return value we have specified it again
+
+check_odd() {
+	if (( $1 % 2 == 1 ))
+	then
+		echo "The number is odd"
+	else
+		echo "The number is even"
+	fi
+}
+check_odd 1
