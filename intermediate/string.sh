@@ -25,3 +25,10 @@ fi
 tag="nginx-v1.2.3"
 version=${tag#nginx-v}
 echo $version
+<<symbol
+# is used to remove from start for shortest match
+## is used to remove from start for longest match
+% is used to remove from end for shortest match
+%% is used to remove from end for longest match
+symbol
+
