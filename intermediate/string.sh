@@ -32,3 +32,7 @@ echo $version
 %% is used to remove from end for longest match
 symbol
 
+#example
+str="feature-login-api"
+echo ${str#*-}
+echo ${str##*-}
